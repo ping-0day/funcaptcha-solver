@@ -36,6 +36,10 @@ while True:
     time.sleep(1)
 ```
 
+## Donate:
+LTC: LctKSNT22aPhu6o4FdFMUWhJ7QJ47pKcEZ
+BTC: bc1q82e6knntkum7pl8p3eu3hkkp5m2vu2d2ngmfgd
+
 ## Showcase
 
 ![Showcase](Showcase.gif)
