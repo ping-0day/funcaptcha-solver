@@ -411,7 +411,7 @@ class Funcaptcha:
         self.blob=blob
         self.chrome_version=chrome_version
         self.useragent=f"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{self.chrome_version}.0.0.0 Safari/537.36"
-        self.session=requests2.Session(impersonate="chrome")
+        self.session=requests2.Session(impersonate=None)
 
         if custom_cookies:
             self.session.cookies.update(custom_cookies)
