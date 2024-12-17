@@ -411,7 +411,7 @@ class Funcaptcha:
         self.blob=blob
         self.chrome_version=chrome_version
         self.useragent=f"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{self.chrome_version}.0.0.0 Safari/537.36"
-        self.session=requests2.Session(impersonate="chrome")
+        self.session=requests2.Session(impersonate=None)
 
         if custom_cookies:
             self.session.cookies.update(custom_cookies)
@@ -730,6 +730,10 @@ class Funcaptcha:
         for item in data:
             if item["key"]==key:
                 return item["value"]
+                
+    def random_pixel_depth(self):
+        pixel_depths = [24, 30]
+        return random.choice(pixel_depths)
 
     def bda(self):
         time_now=time.time()
@@ -913,7 +917,7 @@ class Funcaptcha:
             },
             {
                 "key":"screen_pixel_depth",
-                "value":24
+                "value":self.random_pixel_depth()
             },
             {
                 "key":"navigator_device_memory",
