@@ -730,6 +730,10 @@ class Funcaptcha:
         for item in data:
             if item["key"]==key:
                 return item["value"]
+                
+    def random_pixel_depth(self):
+        pixel_depths = [24, 30]
+        return random.choice(pixel_depths)
 
     def bda(self):
         time_now=time.time()
@@ -913,7 +917,7 @@ class Funcaptcha:
             },
             {
                 "key":"screen_pixel_depth",
-                "value":24
+                "value":self.random_pixel_depth()
             },
             {
                 "key":"navigator_device_memory",
