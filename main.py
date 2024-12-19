@@ -736,28 +736,8 @@ class Funcaptcha:
         return random.choice(pixel_depths)
     
     def generate_h(self):
-        cpu_database = {
-            "Intel": {
-                "Core i3": [4, 8],
-                "Core i5": [8, 12, 16, 20],
-                "Core i7": [16, 20, 28],
-                "Core i9": [24, 32, 40],
-                "Core Ultra 5": [12, 16],
-                "Core Ultra 7": [20, 24],
-                "Core Ultra 9": [28, 32],
-            },
-            "AMD": {
-                "Ryzen 3": [4, 8],
-                "Ryzen 5": [12, 16],
-                "Ryzen 7": [16, 24],
-                "Ryzen 9": [32, 64],
-            },
-        }
-        brand = random.choice(list(cpu_database.keys()))
-        cpu_type = random.choice(list(cpu_database[brand].keys()))
-        core_count = random.choice(cpu_database[brand][cpu_type])
-
-        return core_count
+        logical_core_counts = [4, 8, 12, 16, 20, 24, 28, 32, 40, 64]
+        return random.choice(logical_core_counts)
 
     def bda(self):
         time_now=time.time()
